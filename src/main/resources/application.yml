@@ -1,0 +1,30 @@
+micronaut:
+  application:
+    name: corsTest
+  server:
+    port: -1
+    cors:
+      enabled: true
+      single-header: true
+      configurations:
+        web:
+          maxAge: 3600
+          allowedOrigins:
+            - ^http(|s):\/\/(|www\.)(.*?)(|:[0-9]+)$
+          exposedHeaders:
+            - Access-Control-Allow-Headers
+            - Access-Control-Expose-Headers
+            - Access-Control-Allow-Methods
+            - Access-Control-Allow-Origin
+  router:
+    versioning:
+      enabled: true
+      default-version: 1
+      parameter:
+        enabled: false
+        names: 'v,api-version'
+      header:
+        enabled: true
+        names:
+          - 'X-Api-Version'
+          - 'Accept-Version'
