@@ -12,10 +12,12 @@ micronaut:
           allowedOrigins:
             - ^http(|s):\/\/(|www\.)(.*?)(|:[0-9]+)$
           exposedHeaders:
-            - Access-Control-Allow-Headers
-            - Access-Control-Expose-Headers
-            - Access-Control-Allow-Methods
-            - Access-Control-Allow-Origin
+            - Content-Type
+            - Authorization
+            - X-Api-Version
+            - X-Amz-Date
+            - X-Api-Key
+            - X-Amz-Security-Token
   router:
     versioning:
       enabled: true
